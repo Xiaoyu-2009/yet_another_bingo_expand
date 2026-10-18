@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "yet_another_bingo_expand",
+	"version": "${version}",
+	"name": "Yet Another Bingo Expand",
+	"description": "",
+	"authors": [
+		"Xiaoyu_2009"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/yet_another_bingo_expand/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.xiaoyu.yet_another_bingo_expand.YetAnotherBingoExpand"
+		],
+		"client": [
+			"dev.xiaoyu.yet_another_bingo_expand.client.YetAnotherBingoExpandClient"
+		]
+	},
+	"mixins": [
+		"yet_another_bingo_expand.mixins.json",
+		{
+			"config": "yet_another_bingo_expand.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
