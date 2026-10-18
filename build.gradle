@@ -25,11 +25,14 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-    maven {
-        name = "Yet Another Bingo"
-        url = "https://gitlab.com/api/v4/projects/48318565/packages/maven"
-        content {
-            includeGroup("me.jfenn.bingo")
+    exclusiveContent {
+        forRepository {
+            maven {
+                url "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
         }
     }
 }
@@ -45,7 +48,7 @@ dependencies {
     implementation "curse.maven:jei-238222:9243115"
     implementation "curse.maven:modmenu-308702:8958984"
 
-    implementation "me.jfenn.bingo:api:2.15.0"
+    implementation "maven.modrinth:yet-another-minecraft-bingo:${project.bingo_version}"
 }
 
 processResources {
